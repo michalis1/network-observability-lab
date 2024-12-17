@@ -1,7 +1,14 @@
 ---
 scrape_configs:
 
+# Scrape job to collect internal Prometheus metrics
 - job_name: "prometheus"
   scrape_interval: 15s
   static_configs:
     - targets: ["localhost:9090"]
+
+# Scrape job to collect from the Telegraf instances
+- job_name: "telegraf"
+  scrape_interval: 15s
+  static_configs:
+    - targets: ["telegraf-01:9004", "telegraf-02:9005"]

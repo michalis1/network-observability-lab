@@ -251,3 +251,8 @@
 ##############################################################################
 [[outputs.file]]
   files = ["stdout"]
+
+# Rest of the telegraf configuration omitted...
+[[outputs.prometheus_client]]
+ # HTTP port to listen on
+ listen = ":9004"
